@@ -1,0 +1,31 @@
+---
+APP_ID: ""
+REDIRECT_URL: ""
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    {% capture styles %} {% include styles.scss %} {% endcapture %}
+    <style>{{ styles | scssify }}</style>
+    <title>Account</title>
+</head>
+<body>
+    <main>
+        {% include logo.svg %}
+        <div id="message">Loading...</div>
+        <input type="email" id="email" aria-label="E-Mail" placeholder="E-Mail">
+        <input type="password" id="password" aria-label="Password" placeholder="Password">
+        <input type="password" id="old_password" aria-label="Old Password" placeholder="Old Password">
+        <input type="password" id="new_password" aria-label="New Password" placeholder="New Password">
+        <button id="update">Save Changes</button>
+        <button id="create">Create Account</button>
+        <button id="delete">Delete Account</button>
+        <button id="logout">Logout</button>
+        <button id="login">Login</button>
+    </main>
+    <script src="https://sdk.userbase.com/2/userbase.js"></script>
+    <script>{% include script.js %}</script>
+</body>
+</html>

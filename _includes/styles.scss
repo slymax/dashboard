@@ -1,0 +1,47 @@
+main > * {
+    display: block;
+    margin: 20px auto;
+}
+svg {
+    margin: 30px auto;
+}
+#message, input, button {
+    outline: 0;
+    width: 300px;
+    display: none;
+    max-width: 100%;
+    font-size: 0.8rem;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    border: 2px solid #eee;
+    border-radius: 4px;
+    font-weight: bold;
+    padding: 10px;
+    &::placeholder {
+        color: gray;
+    }
+}
+input[type="email"], input[type="password"] {
+    -webkit-appearance: none;
+}
+#message {
+    border-color: gold;
+    background: rgba(255, 215, 0, 0.15);
+}
+button {
+    cursor: pointer;
+    text-transform: uppercase;
+    background: #eee;
+    color: gray;
+    border: 0;
+}
+body[data-status="signed-out"] {
+    #email, #password, #create, #login {
+        display: block;
+    }
+}
+body[data-status="signed-in"] {
+    #email, #old_password, #new_password, #update, #delete, #logout {
+        display: block;
+    }
+}
