@@ -46,7 +46,9 @@
                 await userbase.signUp({
                     email: document.getElementById("email").value,
                     username: document.getElementById("email").value,
-                    password: document.getElementById("password").value
+                    password: document.getElementById("password").value,
+                    sessionLength: 8760,
+                    rememberMe: "local"
                 });
                 location =  "{{ page.REDIRECT_URL }}";
             } catch (error) {
@@ -57,7 +59,9 @@
             try {
                 await userbase.signIn({
                     username: document.getElementById("email").value,
-                    password: document.getElementById("password").value
+                    password: document.getElementById("password").value,
+                    sessionLength: 8760,
+                    rememberMe: "local"
                 });
                 location =  "{{ page.REDIRECT_URL }}";
             } catch (error) {
